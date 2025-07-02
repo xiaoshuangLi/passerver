@@ -14,6 +14,15 @@ const toId = () => {
   return parts[parts.length -1];
 };
 
+const onResponse = (source = {}) => {
+  const { beacon } = source;
+
+  const got = recoder.get(beacon);
+
+  recoder.del(beacon);
+  got?.resolve?.(source);
+};
+
 const hander = (server) => {
   const io = new Server(server);
 
@@ -22,7 +31,9 @@ const hander = (server) => {
     const hostname = `${id}.${HOST_NAME}`;
 
     recoder.set(hostname, socket);
-    socket.emit(CONNECTION.ESTABLISHMENT, { hostname });
+
+    socket.on(CONNECTION.RESPONSE, onResponse);
+    socket.emit(CONNECTION.CREATE, { hostname });
   });
 };
 

@@ -6,7 +6,7 @@ import Router from '@koa/router';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const basePath = path.resolve(__dirname, '../../');
+const basePath = path.resolve(__dirname, '../../../');
 
 const router = new Router();
 

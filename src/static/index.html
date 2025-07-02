@@ -11,8 +11,8 @@
       const socket = new io();
       const log = (...args) => (...rest) => console.log(...args, ...rest);
 
-      socket.on('establishment', log('establishment'));
-      socket.on('retransmission', log('retransmission'));
+      socket.on('connection_create', log('connection_create'));
+      socket.on('connection_request', log('connection_request'));
 
       window.socket = socket;
     </script>
