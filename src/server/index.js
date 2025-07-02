@@ -8,8 +8,15 @@ import retransmission from './middlewares/retransmission.js';
 const app = new Koa();
 const router = new Router();
 
+const options = {
+  multipart: true,
+  jsonLimit: '1gb',
+  formLimit: '1gb',
+  textLimit: '1gb',
+};
+
 app
-  .use(koaBody({ multipart: true }))
+  .use(koaBody(options))
   .use(local.routes())
   .use(router.allowedMethods())
   .use(retransmission);
