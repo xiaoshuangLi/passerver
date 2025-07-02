@@ -15,12 +15,16 @@ const toId = () => {
 };
 
 const onResponse = (source = {}) => {
-  const { beacon } = source;
+  const { beacon, error, response } = source;
 
-  const got = recoder.get(beacon);
+  const got = recoder.get(beacon) || {};
+  const { resolve, reject } = got;
 
   recoder.del(beacon);
-  got?.resolve?.(source);
+
+  error
+    ? reject?.(source)
+    : resolve?.(response);
 };
 
 const hander = (server) => {
