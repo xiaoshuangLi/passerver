@@ -1,0 +1,32 @@
+{
+  "name": "passerver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Passerver allows you to easily share a web service on your local development machine without messing with DNS and firewall settings.",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --inspect src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoshuangLi/passerver.git"
+  },
+  "author": "XiaoshuangLi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaoshuangLi/passerver/issues"
+  },
+  "homepage": "https://github.com/xiaoshuangLi/passerver#readme",
+  "devDependencies": {
+    "jest": "^30.0.3",
+    "socket.io-client": "^4.8.1"
+  },
+  "dependencies": {
+    "@koa/router": "^13.1.0",
+    "koa": "^3.0.0",
+    "koa-body": "^6.0.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0"
+  }
+}

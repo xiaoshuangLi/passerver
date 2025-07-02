@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <pre style="word-wrap: break-word; white-space: pre-wrap;">ok</pre>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <script>
+      const socket = new io();
+      const log = (...args) => (...rest) => console.log(...args, ...rest);
+
+      socket.on('establishment', log('establishment'));
+      socket.on('retransmission', log('retransmission'));
+
+      window.socket = socket;
+    </script>
+  </body>
+</html>
