@@ -61,7 +61,11 @@ const promise = (beacon) => {
 };
 
 const promiseToContext = async (ctx, beacon) => {
-  ctx.body = await promise(beacon);
+  const promised = await promise(beacon) || {};
+  const { headers = {}, response } = promised;
+
+  ctx.body = response;
+  ctx.set(headers);
 };
 
 const retransmission = (ctx = {}) => {

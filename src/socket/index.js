@@ -15,7 +15,12 @@ const toId = () => {
 };
 
 const onResponse = (source = {}) => {
-  const { beacon, error, response } = source;
+  const {
+    beacon,
+    error,
+    headers,
+    response,
+  } = source;
 
   const got = recoder.get(beacon) || {};
   const { resolve, reject } = got;
@@ -24,7 +29,7 @@ const onResponse = (source = {}) => {
 
   error
     ? reject?.(error)
-    : resolve?.(response);
+    : resolve?.(source);
 };
 
 const handler = (server) => {
