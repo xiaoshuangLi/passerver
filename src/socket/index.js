@@ -27,7 +27,7 @@ const onResponse = (source = {}) => {
     : resolve?.(response);
 };
 
-const hander = (server) => {
+const handler = (server) => {
   const io = new Server(server);
 
   io.on('connection', (socket) => {
@@ -41,4 +41,4 @@ const hander = (server) => {
   });
 };
 
-export default hander;
+export default handler;
