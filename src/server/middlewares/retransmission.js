@@ -47,6 +47,7 @@ const bundle = {
   href: getFromRequest('href'),
   method: getFromRequest('method'),
   headers: getFromRequest('headers'),
+  originalUrl: getFromRequest('originalUrl'),
 };
 
 const promise = (beacon) => {

@@ -23,7 +23,7 @@ const onResponse = (source = {}) => {
   recoder.del(beacon);
 
   error
-    ? reject?.(source)
+    ? reject?.(error)
     : resolve?.(response);
 };
 
