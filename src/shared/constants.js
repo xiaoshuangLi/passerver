@@ -1,4 +1,4 @@
-export const PORT = process.env.PORT || 1638;
+export const PORT = process.env.PORT || 3000;
 export const HOST_NAME = process.env.HOST_NAME || 'passerver.lowcode.cloud.netease.com';
 
 export const CONNECTION_PREFIX = 'connection';
